@@ -1,0 +1,34 @@
+App\Entity\Person:
+  type: entity
+  table: person
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: false
+      id: true
+      generator:
+        strategy: SEQUENCE
+  fields:
+    name:
+      type: string
+      nullable: false
+      length: 255
+      options:
+        fixed: false
+    age:
+      type: integer
+      nullabe: false
+      options:
+        fixed: false
+    weight:
+      type: integer
+      nullable: false
+      options:
+        fixed: false
+  oneToMany:
+    car:
+      targetEntity: App\Entity\Car
+      mappedBy: person
+  lifecycleCallbacks: {  }

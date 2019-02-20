@@ -1,0 +1,10 @@
+<ul>
+    <li>{{ person.name }}</li>
+    <ul>
+        {% for car in person.car %}
+        <li>
+            {{ car.title }}
+        </li>
+        {% endfor %}
+    </ul>
+</ul>

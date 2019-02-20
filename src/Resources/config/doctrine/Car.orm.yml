@@ -1,0 +1,36 @@
+App\Entity\Car:
+  type: entity
+  table: car
+  id:
+    id:
+      type: integer
+      nullable: false
+      options:
+        unsigned: false
+      id: true
+      generator:
+        strategy: SEQUENCE
+  fields:
+    title:
+      type: string
+      nullable: false
+      length: 255
+      options:
+        fixed: false
+    price:
+      type: float
+      nullabe: false
+      options:
+        fixed: false
+  manyToOne:
+    person:
+      targetEntity: App\Entity\Person
+      cascade: {  }
+      fetch: EAGER
+      mappedBy: null
+      inversedBy: null
+      joinColumns:
+        person_id:
+          referencedColumnName: id
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
