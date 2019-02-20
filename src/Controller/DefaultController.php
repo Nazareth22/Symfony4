@@ -17,7 +17,7 @@ class DefaultController extends AbstractController
 {
     public function index()
     {
-        $person = $this->getDoctrine()->getRepository(Person::class)->findOneBy(array('name'=>'Иван'));
+        $person = $this->getDoctrine()->getRepository(Person::class)->findRandomPerson();
 
         return $this->render('site/index.html.twig', array('person'=>$person));
     }
